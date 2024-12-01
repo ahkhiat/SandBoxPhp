@@ -21,7 +21,7 @@ class Account {
     function __toString() {
         return "Le compte n° " . $this->accountNumber . 
                " appartenant à " . $this->name . 
-               " affiche un solde de " . $this->balance;
+               " affiche un solde de " . $this->balance . "€";
     }
 
     // Je pourrais également faire :
@@ -31,9 +31,19 @@ class Account {
 
     // et l'appeler avec $variable->afficher();
 
-    function deposit($amount) {
+    public function deposit($amount) {
         $this->balance += $amount;
         echo $this;
+    }
+
+    public function getBalance()
+    {
+        return $this->balance;
+    }
+
+    public function setBalance($balance)
+    {
+        $this->balance = $balance;
     }
 
 
